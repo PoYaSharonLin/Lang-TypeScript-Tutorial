@@ -1,28 +1,37 @@
 // arrays
-var names = ['luigi', 'mario', 'yoshi'];
-names.push('toad');
+var ethinicity = ['slimes', 'hobbies'];
+ethinicity.push('goblins');
 // names.push(3);
 // names[1] = 3;
-var numbers = [10, 20, 12, 15];
+var numbers = [100, 50];
 numbers.push(25);
 // numbers.push('shaun');
 // numbers[0] = 'shaun';
-var mixed = ['ken', 4, 'chun-li', 8, 9];
-mixed.push('ryu');
-mixed.push(10);
-mixed[0] = 3;
+var ethinicity_num = ['slimes', 100, 'hobbies', 50];
+ethinicity_num.push('goblins');
+ethinicity_num.push(25);
+ethinicity_num[1] = 200;
+console.log(ethinicity_num);
 // objects
-var ninja = {
-    name: 'mario',
-    belt: 'black',
-    age: 30
+var goblin_nilbog = {
+    name: 'nilbog',
+    age: 41,
+    weight: 30,
+    height: 100,
+    habitation: 'cave',
+    tools: 'axes'
 };
-ninja.age = 40;
-ninja.name = 'ryu';
+goblin_nilbog.habitation = 'forest';
+goblin_nilbog.tools = 'hammer';
+console.log(goblin_nilbog);
 // ninja.age = '30';
 // ninja.skills = ['fighting', 'sneaking']
-ninja = {
-    name: 'yoshi',
-    belt: 'orange',
-    age: 40
+goblin_nilbog = {
+    name: 'Nilbog',
+    age: 42,
+    weight: 32,
+    height: 100,
+    habitation: 'cave',
+    tools: 'hammer'
 };
+console.log(goblin_nilbog);
