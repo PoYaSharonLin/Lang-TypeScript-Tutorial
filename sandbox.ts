@@ -1,19 +1,14 @@
-let character = 'mario';
-let age = 30;
-let isBlackBelt = false;
+let character = 'Goblin';
+let age = 40;
+let height = 100;
+let weight = 30;
 
-// character = 20;
-character = 'luigi';
+// height = 105 
+// weight = 35
 
-// age = 'yoshi';
-age = 40;
-
-// isBlackBelt = 'yes';
-isBlackBelt = true;
-
-const circ = (diameter: number) => {
-  return diameter * Math.PI;
+const BMI = (weight: number, height: number) => {
+  return  weight * (10**2**2) / (height**2);
 };
 
 // console.log(area('hello'));
-console.log(circ(7.5));
+console.log(BMI(30,100));
