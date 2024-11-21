@@ -1,28 +1,24 @@
-let character: string = 'mario';
-let age: number;
-let isLoggedIn: boolean;
-
-// age = 'luigi';
-age = 30;
-
-// isLoggedIn = 25;
-isLoggedIn = true;
+// single variable 
+let new_name: string;
+let new_age: number;
+let foundAdventurer: boolean|number;
+// true or false / 0 or 1
 
 // arrays
-let ninjas: string[] = [];
+let ascension_paths: string[] = [];
 
-ninjas.push('ryu');
-ninjas.push('chun-li');
-console.log(ninjas);
+ascension_paths.push('Biological Ascension');
+ascension_paths.push('Psionic Ascension');
+ascension_paths.push('Synthetic Ascension');
+console.log(ascension_paths);
 
 // union types
-let mixed: (string|number|boolean)[] = [];
-mixed.push('hello');
-mixed.push(false);
-mixed.push(20);
-console.log(mixed);
+let personal_info: (string|number|boolean)[] = [];
+personal_info.push('Elfie');
+personal_info.push(300);
+personal_info.push(true);
+console.log(personal_info);
 
-let uid: string|number;
 
 // objects
 let ninjaOne: object;
