@@ -6,9 +6,7 @@ greet()
 
 type Monster = "slimes" | "hobbies" | "goblins";
 
-const before_experience: number = 0; 
-
-const levelup = (monster: Monster, count: number): number => {
+const experience_calculation = (monster: Monster, count: number): number => {
     const experienceRates: Record<Monster, number> = {
         slimes: 1,
         hobbies: 3,
@@ -22,4 +20,4 @@ const levelup = (monster: Monster, count: number): number => {
     console.log('Experience gained:', experience);
     return experience
 };
-levelup("slimes",100)
+experience_calculation("slimes",100)
