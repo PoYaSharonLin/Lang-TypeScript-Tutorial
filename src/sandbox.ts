@@ -1,23 +1,25 @@
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
 
-// greet = 'hello';
-
-// greet = () => {
-//   console.log('hello, again');
-// }
-
-const add = (a: number, b: number, c/*?*/: number | string = 10): void => {
-  console.log(a + b);
-  console.log(c);
+let greet = () => {
+  console.log('Lets start the adventure');
 }
+greet()
 
-add(5, 10, 'ninja');
+type Monster = "slimes" | "hobbies" | "goblins";
 
-const minus = (a: number, b: number): number => {
-  return a + b;
-}
+const before_experience: number = 0; 
 
-let result = minus(10,7);
-console.log(result);
+const levelup = (monster: Monster, count: number): number => {
+    const experienceRates: Record<Monster, number> = {
+        slimes: 1,
+        hobbies: 3,
+        goblins: 10,
+    };
+
+    const experience = experienceRates[monster] * count;
+
+    console.log(monster)
+    console.log(count)
+    console.log('Experience gained:', experience);
+    return experience
+};
+levelup("slimes",100)

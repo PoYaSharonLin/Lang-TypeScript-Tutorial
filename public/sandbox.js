@@ -1,19 +1,19 @@
 "use strict";
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
-// greet = 'hello';
-// greet = () => {
-//   console.log('hello, again');
-// }
-var add = function (a, b, c /*?*/) {
-    if (c === void 0) { c /*?*/ = 10; }
-    console.log(a + b);
-    console.log(c);
+var greet = function () {
+    console.log('Lets start the adventure');
 };
-add(5, 10, 'ninja');
-var minus = function (a, b) {
-    return a + b;
+greet();
+var before_experience = 0;
+var levelup = function (monster, count) {
+    var experienceRates = {
+        slimes: 1,
+        hobbies: 3,
+        goblins: 10,
+    };
+    var experience = experienceRates[monster] * count;
+    console.log(monster);
+    console.log(count);
+    console.log('Experience gained:', experience);
+    return experience;
 };
-var result = minus(10, 7);
-console.log(result);
+levelup("slimes", 100);
