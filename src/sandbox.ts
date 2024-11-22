@@ -1,23 +1,23 @@
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
+//1. 幫型別取別名
+type goblin = {
+    name: string | number;
+    height: number;
+    weight: number;
+};
 
-// greet = 'hello';
+const goblin_55688: goblin = {
+    name: 55688,
+    height: 103,
+    weight: 33,
+};
+console.log(goblin_55688)
 
-// greet = () => {
-//   console.log('hello, again');
-// }
+//2. 限縮型別的變數選項
+type Monster = "slime" | "hobby" | "goblin";
 
-const add = (a: number, b: number, c/*?*/: number | string = 10): void => {
-  console.log(a + b);
-  console.log(c);
+function fightMonster(monster: Monster) {
+    console.log(`對抗 ${monster}...`);
 }
 
-add(5, 10, 'ninja');
-
-const minus = (a: number, b: number): number => {
-  return a + b;
-}
-
-let result = minus(10,7);
-console.log(result);
+fightMonster("slime"); // OK
+// fightMonster("tiger"); // 錯誤：'tiger' 不屬於 Monster 的選項

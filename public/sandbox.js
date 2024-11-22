@@ -1,19 +1,12 @@
 "use strict";
-// let greet: Function = () => {
-//   console.log('hello, world');
-// }
-// greet = 'hello';
-// greet = () => {
-//   console.log('hello, again');
-// }
-var add = function (a, b, c /*?*/) {
-    if (c === void 0) { c /*?*/ = 10; }
-    console.log(a + b);
-    console.log(c);
+var goblin_55688 = {
+    name: 55688,
+    height: 103,
+    weight: 33,
 };
-add(5, 10, 'ninja');
-var minus = function (a, b) {
-    return a + b;
-};
-var result = minus(10, 7);
-console.log(result);
+console.log(goblin_55688);
+function fightMonster(monster) {
+    console.log("\u5C0D\u6297 ".concat(monster, "..."));
+}
+fightMonster("slime"); // OK
+// fightMonster("tiger"); // 錯誤：'tiger' 不屬於 Monster 的選項
