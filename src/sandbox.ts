@@ -1,26 +1,15 @@
-// let greet: Function;
-
-// example 1
-let greet: (a: string, b: string) => void;
-
-greet = (name: string, greeting: string) => {
-  console.log(`${name} says ${greeting}`);
+// movement operations
+interface MovementOperation {
+    (AxisCoordinate: number, distance: number): number;
 }
 
-// example 2
-let calc: (a: number, b: number, c: string) => number;
+const HeadNorth: MovementOperation = (x,dis) => x + dis
+const HeadSouth: MovementOperation = (x,dis) => x - dis
+const HeadEast: MovementOperation = (y,dis) => y + dis
+const HeadWest: MovementOperation = (y,dis)=> y - dis
 
-calc = (numOne: number, numTwo: number, action: string) => {
-  if (action === 'add') {
-    return numOne + numTwo;
-  } else {
-    return numOne - numTwo;
-  }
-}
+console.log("HeadNorth, x = 10, distance = 100")
+console.log("End point: x =" + HeadNorth(10,100))
 
-// example 3
-let logDetails: (obj: {name: string, age: number}) => void;
-
-logDetails = (ninja: {name: string, age: number}) => {
-  console.log(`${ninja.name} is ${ninja.age} years old`);
-}
+console.log("HeadWest, y = -20, distance = 300")
+console.log("End point: y =" + HeadWest(-20,300))

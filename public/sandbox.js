@@ -1,22 +1,9 @@
 "use strict";
-// let greet: Function;
-// example 1
-var greet;
-greet = function (name, greeting) {
-    console.log(name + " says " + greeting);
-};
-// example 2
-var calc;
-calc = function (numOne, numTwo, action) {
-    if (action === 'add') {
-        return numOne + numTwo;
-    }
-    else {
-        return numOne - numTwo;
-    }
-};
-// example 3
-var logDetails;
-logDetails = function (ninja) {
-    console.log(ninja.name + " is " + ninja.age + " years old");
-};
+var HeadNorth = function (x, dis) { return x + dis; };
+var HeadSouth = function (x, dis) { return x - dis; };
+var HeadEast = function (y, dis) { return y + dis; };
+var HeadWest = function (y, dis) { return y - dis; };
+console.log("HeadNorth, x = 10, distance = 100");
+console.log("End point: x =" + HeadNorth(10, 100));
+console.log("HeadWest, y = -20, distance = 300");
+console.log("End point: y =" + HeadWest(-20, 300));
