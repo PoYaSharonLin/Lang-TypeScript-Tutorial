@@ -1,4 +1,4 @@
-class user_public_info {
+export class user_public_info {
     readonly name :string;
     public user_id: number;
     constructor(name :string, user_id :number){
