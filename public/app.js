@@ -1,4 +1,5 @@
-"use strict";
+import { resuman } from './classes/resuman.js';
+import { user_public_info } from './classes/user_public_info.js';
 const google_resume = new resuman("Google_Resume", 4);
 const meta_resume = new resuman("Meta_Resume", 5);
 let resuman_array = [];

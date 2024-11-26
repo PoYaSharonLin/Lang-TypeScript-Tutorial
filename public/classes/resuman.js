@@ -1,5 +1,4 @@
-"use strict";
-class resuman {
+export class resuman {
     constructor(title, section_counts) {
         this.title = title;
         this.section_counts = section_counts;
