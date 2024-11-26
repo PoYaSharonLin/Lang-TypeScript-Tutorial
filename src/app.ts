@@ -1,37 +1,27 @@
-import { Invoice } from './classes/Invoice.js';
+const google_resume = new resuman("Google_Resume",4)
+const meta_resume = new resuman("Meta_Resume",5)
 
-const invOne = new Invoice('mario', 'work on the mario website', 250);
-const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
+let resuman_array: resuman[] = [];
+resuman_array.push(google_resume)
+resuman_array.push(meta_resume)
 
-// invOne.client = 'yoshi';
-// invOne.amount = 50;
+resuman_array.forEach(resume => {
+  console.log(resume.format());
+  // console.log(resume.title, resume.section_counts);
+}
+)
 
-let invoices: Invoice[] = [];
-invoices.push(invOne)
-invoices.push(invTwo);
-
-invoices.forEach(inv => {
-  console.log(inv.client, /*inv.details,*/ inv.amount, inv.format());
-})
-
-
-
-const form = document.querySelector('.new-item-form') as HTMLFormElement;
-console.log(form.children);
-
-// inputs
-const type = document.querySelector('#type') as HTMLInputElement;
-const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
-const details = document.querySelector('#details') as HTMLInputElement;
-const amount = document.querySelector('#amount') as HTMLInputElement;
-
-form.addEventListener('submit', (e: Event) => {
-  e.preventDefault();
-
-  console.log(
-    type.value, 
-    tofrom.value, 
-    details.value, 
-    amount.valueAsNumber
-  );
-});
+// b. readonly - 不讓 user 改名
+// user 不能改名
+class user_public_info {
+  readonly name :string;
+  public user_id: number;
+  constructor(name :string, user_id :number){
+    this.name = name;
+    this.user_id = user_id
+  }
+ 
+}
+const new_user = new user_public_info("YOYO MAN",123456789)
+// new_user.name = "YOYO 麵"
+console.log(new_user)
