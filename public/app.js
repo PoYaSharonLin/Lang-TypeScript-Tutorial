@@ -1,31 +1,45 @@
 "use strict";
 // classes
-var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+// a. user input 存成一個 list
+var resuman = /** @class */ (function () {
+    function resuman(title, section_counts) {
+        this.title = title;
+        this.section_counts = section_counts;
     }
-    Invoice.prototype.format = function () {
-        return this.client + " owes \u00A3" + this.amount + " for " + this.details;
-    };
-    return Invoice;
+    return resuman;
 }());
-var invOne = new Invoice('mario', 'work on the mario website', 250);
-var invTwo = new Invoice('luigi', 'work on the luigi website', 300);
-var invoices = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-// invoices.push({ name: 'shaun' });
-console.log(invoices);
-var form = document.querySelector('.new-item-form');
-console.log(form.children);
-// inputs
-var type = document.querySelector('#type');
-var tofrom = document.querySelector('#tofrom');
-var details = document.querySelector('#details');
-var amount = document.querySelector('#amount');
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
-});
+var google_resume = new resuman("Google_Resume", 4);
+console.log(google_resume);
+// b. user input 分開存
+var user_public_info = /** @class */ (function () {
+    function user_public_info(name, user_id) {
+        this.name = name;
+        this.user_id = user_id;
+    }
+    return user_public_info;
+}());
+var new_user = new resuman("YOYO MAN", 123456789);
+console.log(new_user);
+// c. 不存 user input 存 input derivitives
+// d. Optional input
+// e. default input
+var user_private_info = /** @class */ (function () {
+    function user_private_info(birthyear, payment, sex) {
+        if (sex === void 0) { sex = "N/A"; }
+        this.age = new Date().getFullYear() - birthyear;
+        this.payment = payment;
+        this.sexuality = sex;
+    }
+    return user_private_info;
+}());
+// const new_user_private_1 = new user_private_info(2001)
+var new_user_private_2 = new user_private_info(2000, "VISA");
+// console.log(new_user_private_1)
+console.log(new_user_private_2);
+var user_ = /** @class */ (function () {
+    function user_(payment) {
+        this.payment_name = payment;
+        this.verified;
+    }
+    return user_;
+}());
