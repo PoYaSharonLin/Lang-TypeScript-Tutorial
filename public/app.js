@@ -10,12 +10,6 @@ resuman_array.forEach(resume => {
 });
 // b. readonly - 不讓 user 改名
 // user 不能改名
-class user_public_info {
-    constructor(name, user_id) {
-        this.name = name;
-        this.user_id = user_id;
-    }
-}
 const new_user = new user_public_info("YOYO MAN", 123456789);
 // new_user.name = "YOYO 麵"
 console.log(new_user);
