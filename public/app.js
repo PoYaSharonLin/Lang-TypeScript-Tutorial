@@ -1,35 +1,34 @@
 "use strict";
 // classes
-var Invoice = /** @class */ (function () {
-    // readonly client: string;
-    // private details: string;
-    // public amount: number;
-    function Invoice(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
+// Public & Private - loop resume 以特定 format output 到 console  
+var resuman = /** @class */ (function () {
+    function resuman(title, section_counts) {
+        this.title = title;
+        this.section_counts = section_counts;
     }
-    Invoice.prototype.format = function () {
-        return this.client + " owes \u00A3" + this.amount + " for " + this.details;
+    resuman.prototype.format = function () {
+        return "".concat(this.title, " consists of ").concat(this.section_counts, " sections");
     };
-    return Invoice;
+    return resuman;
 }());
-var invOne = new Invoice('mario', 'work on the mario website', 250);
-var invTwo = new Invoice('luigi', 'work on the luigi website', 300);
-var invoices = [];
-invoices.push(invOne);
-invoices.push(invTwo);
-invoices.forEach(function (inv) {
-    console.log(inv.client, /*inv.details,*/ inv.amount, inv.format());
+var google_resume = new resuman("Google_Resume", 4);
+var meta_resume = new resuman("Meta_Resume", 5);
+var resuman_array = [];
+resuman_array.push(google_resume);
+resuman_array.push(meta_resume);
+resuman_array.forEach(function (resume) {
+    console.log(resume.format());
+    // console.log(resume.title, resume.section_counts);
 });
-var form = document.querySelector('.new-item-form');
-console.log(form.children);
-// inputs
-var type = document.querySelector('#type');
-var tofrom = document.querySelector('#tofrom');
-var details = document.querySelector('#details');
-var amount = document.querySelector('#amount');
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
-});
+// b. readonly - 不讓 user 改名
+// user 不能改名
+var user_public_info = /** @class */ (function () {
+    function user_public_info(name, user_id) {
+        this.name = name;
+        this.user_id = user_id;
+    }
+    return user_public_info;
+}());
+var new_user = new user_public_info("YOYO MAN", 123456789);
+// new_user.name = "YOYO 麵"
+console.log(new_user);
