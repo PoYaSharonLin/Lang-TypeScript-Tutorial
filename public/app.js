@@ -1,14 +1,14 @@
 import { Invoice } from './classes/Invoice.js';
 import { Payment } from './classes/Payment.js';
-// let docOne: HasFormatter;
-// let docTwo: HasFormatter;
-// docOne = new Invoice('yoshi', 'web work', 250);
-// docTwo = new Payment('mario', 'plumbing', 200);
-// let docs: HasFormatter[] = [];
-// docs.push(docOne);
-// docs.push(docTwo);
+let docOne;
+let docTwo;
+docOne = new Invoice('yoshi', 'web work', 250);
+docTwo = new Payment('mario', 'plumbing', 200);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
 const form = document.querySelector('.new-item-form');
-console.log(form.children);
 // inputs
 const type = document.querySelector('#type');
 const tofrom = document.querySelector('#tofrom');
