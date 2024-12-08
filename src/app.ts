@@ -1,51 +1,50 @@
 import { Invoice } from './classes/Invoice.js';
 
-// interfaces
-export interface IsPerson {
+// module 
+import { HttpClient, HttpResponse } from './http-client.js';
+
+// interface 
+interface User {
+  id: number;
   name: string;
-  age?: number;
-  speak(a: string): void;
-  spend(a: number): number;
+  email: string;
 }
 
-const me: IsPerson = {
-  name: 'shaun',
-  //age: 30,
-  speak(text: string): void {
-    console.log(text);
-  },
-  spend(amount: number): number {
-    console.log('I spent ', amount);
-    return amount;
-  },
+// class 
+const httpClient = new HttpClient('https://api.example.com');
+console.log(httpClient)
+
+export const getUser = async (id: number): Promise<User | null> => {
+  const response: HttpResponse<User> = await httpClient.get<User>(`/users/${id}`);
+  if (response.error) {
+    console.error(`Failed to fetch user: ${response.error}`);
+    return null;
+  }
+  return response.data;
 };
 
-console.log(me);
-me.speak('hello, world');
 
-const greetPerson = (person: IsPerson): void => {
-  console.log('hello ', person.name);
+export const createUser = async (user: User): Promise<User | null> => {
+  const response: HttpResponse<User> = await httpClient.post<User>('/users', user);
+  if (response.error) {
+    console.error(`Failed to create user: ${response.error}`);
+    return null;
+  }
+  return response.data;
+};
+
+
+// Example Usage
+const newUser: User = {
+  id: 0,
+  name: 'John Doe',
+  email: 'john.doe@example.com'
+};
+
+const createdUser = createUser(newUser);
+
+if (createdUser) {
+  console.log('User created successfully:', createdUser);
+} else {
+  console.error('Failed to create user.');
 }
-
-greetPerson(me);
-//greetPerson({name: 'shaun'});
-
-const form = document.querySelector('.new-item-form') as HTMLFormElement;
-console.log(form.children);
-
-// inputs
-const type = document.querySelector('#type') as HTMLInputElement;
-const tofrom = document.querySelector('#tofrom') as HTMLInputElement;
-const details = document.querySelector('#details') as HTMLInputElement;
-const amount = document.querySelector('#amount') as HTMLInputElement;
-
-form.addEventListener('submit', (e: Event) => {
-  e.preventDefault();
-
-  console.log(
-    type.value, 
-    tofrom.value, 
-    details.value, 
-    amount.valueAsNumber
-  );
-});
