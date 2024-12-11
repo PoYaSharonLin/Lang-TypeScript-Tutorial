@@ -31,21 +31,12 @@ form.addEventListener('submit', (e) => {
 //   let uid = Math.floor(Math.random() * 100);
 //   return {...obj, uid};
 // }
-const addUID = (obj) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { uid });
+// generics with interfaces
+const createEmail = (obj) => {
+    const URL = obj.name + "@.edu.tw";
+    return Object.assign(Object.assign({}, obj), { URL });
 };
-let docOne = addUID({ name: 'yoshi', age: 40 });
-//let docTwo = addUID('shaun');
-console.log(docOne.name);
-const docThree = {
-    uid: 1,
-    resourceName: 'person',
-    data: { name: 'shaun' }
-};
-const docFour = {
-    uid: 1,
-    resourceName: 'shoppingList',
-    data: ['bread', 'milk']
-};
-console.log(docThree, docFour);
+let sharon_email = createEmail({ name: "Sharon" });
+console.log(sharon_email.name); // Access the name property
+console.log(sharon_email.URL); // Access the generated URL
+// let rob_email = createEmail( name: "Rob" );

@@ -41,33 +41,16 @@ form.addEventListener('submit', (e: Event) => {
 //   return {...obj, uid};
 // }
 
-const addUID = <T extends {name: string}>(obj: T) => {
-  let uid = Math.floor(Math.random() * 100);
-  return {...obj, uid};
-}
 
-let docOne = addUID({name: 'yoshi', age: 40});
-//let docTwo = addUID('shaun');
-
-console.log(docOne.name);
-
-// with interfaces
-interface Resource<T> {
-  uid: number;
-  resourceName: string;
-  data: T;
-}
-
-const docThree: Resource<object> = {
-  uid: 1, 
-  resourceName: 'person', 
-  data: { name: 'shaun' }
+// generics with interfaces
+const createEmail = <T extends { name: string }>(obj: T) => {
+  const URL = obj.name + "@.edu.tw";
+  return { ...obj, URL };
 };
 
-const docFour: Resource<string[]> = {
-  uid: 1, 
-  resourceName: 'shoppingList', 
-  data: ['bread', 'milk']
-};
+let sharon_email = createEmail({ name: "Sharon" });
 
-console.log(docThree, docFour);
+console.log(sharon_email.name); // Access the name property
+console.log(sharon_email.URL);  // Access the generated URL
+
+// let rob_email = createEmail( name: "Rob" );
