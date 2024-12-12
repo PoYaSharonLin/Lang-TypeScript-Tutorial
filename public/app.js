@@ -22,24 +22,28 @@ form.addEventListener('submit', (e) => {
     }
     list.render(doc, type.value, 'end');
 });
-// ENUMS
-var ResourceType;
-(function (ResourceType) {
-    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
-    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
-    ResourceType[ResourceType["FILM"] = 2] = "FILM";
-    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
-})(ResourceType || (ResourceType = {}));
-;
-const docOne = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: { title: 'name of the wind' }
+// ENUMS HTTPS status 
+// 1. Enum http status 
+// 2. Mapping status code to status messege 
+// 3. Assign http status 
+// 4. console log output 
+var httpstatus;
+(function (httpstatus) {
+    httpstatus[httpstatus["OK"] = 200] = "OK";
+    httpstatus[httpstatus["ACCEPTED"] = 201] = "ACCEPTED";
+    httpstatus[httpstatus["NOT_FOUND"] = 404] = "NOT_FOUND";
+    httpstatus[httpstatus["INTERNAL_SERVER_ERROR"] = 500] = "INTERNAL_SERVER_ERROR";
+})(httpstatus || (httpstatus = {}));
+console.log(httpstatus.OK);
+console.log(httpstatus.NOT_FOUND);
+const statemessages = {
+    [httpstatus.OK]: 'Request Sucessfully!',
+    [httpstatus.ACCEPTED]: 'Request Accepted!',
+    [httpstatus.NOT_FOUND]: 'Page Not Found!',
+    [httpstatus.INTERNAL_SERVER_ERROR]: 'Internal Server Error!',
 };
-const docTwo = {
-    uid: 10,
-    resourceType: ResourceType.DIRECTOR,
-    data: { title: 'name of the wind' }
-};
-console.log(docOne);
-console.log(docTwo);
+console.log(statemessages);
+let sucessfultry = httpstatus.OK;
+// let failedtry: httpstatus = httpstatus.reject 
+console.log(statemessages[sucessfultry] || "unknown status");
+// console.log(statemessages[failedtry] || 'unknown status')
